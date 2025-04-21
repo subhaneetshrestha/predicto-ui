@@ -8,8 +8,8 @@ import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-const browserDistFolder = resolve(serverDistFolder, '../browser');
+const serverDistributionFolder = dirname(fileURLToPath(import.meta.url));
+const browserDistributionFolder = resolve(serverDistributionFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
@@ -20,8 +20,8 @@ const angularApp = new AngularNodeAppEngine();
  *
  * Example:
  * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
+ * app.get('/api/**', (request, response) => {
+ *   // Handle API requestuest
  * });
  * ```
  */
@@ -30,7 +30,7 @@ const angularApp = new AngularNodeAppEngine();
  * Serve static files from /browser
  */
 app.use(
-  express.static(browserDistFolder, {
+  express.static(browserDistributionFolder, {
     maxAge: '1y',
     index: false,
     redirect: false,
@@ -40,11 +40,11 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use('/**', (req, res, next) => {
+app.use('/**', (request, _response, next) => {
   angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
+    .handle(request)
+    .then(async (response) =>
+      response ? writeResponseToNodeResponse(response, _response) : next(),
     )
     .catch(next);
 });
@@ -54,13 +54,13 @@ app.use('/**', (req, res, next) => {
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] ?? 4000;
   app.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.info(`Node Express server listening on http://localhost:${port}`);
   });
 }
 
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
-export const reqHandler = createNodeRequestHandler(app);
+export const requestHandler = createNodeRequestHandler(app);
