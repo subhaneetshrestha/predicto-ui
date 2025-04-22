@@ -20,7 +20,8 @@
     "paths": {
       "@core/*": ["./src/app/core/*"],
       "@features/*": ["./src/app/features/*"],
-      "@environments/*": ["./src/environments/*"]
+      "@environments/*": ["./src/environments/*"],
+      "@layouts/*": ["./src/app/layouts/*"]
     },
     "baseUrl": "./"
   },

@@ -57,6 +57,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch(), withInterceptors([])),
     provideAnimationsAsync(),
     provideClientHydration(withEventReplay()),
-    provideCloudinaryLoader(''),
+    provideCloudinaryLoader('https://res.cloudinary.com/dtrct6e41'),
   ],
 };
