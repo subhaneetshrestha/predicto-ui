@@ -4,8 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'pdto-not-found',
   imports: [],
   templateUrl: './not-found.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotFoundComponent {
-
-}
+export class NotFoundComponent {}

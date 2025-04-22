@@ -4,8 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'pdto-log-in',
   imports: [],
   templateUrl: './log-in.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogInComponent {
-
-}
+export class LogInComponent {}

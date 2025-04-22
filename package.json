@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:predicto-ui": "node dist/predicto-ui/server/server.mjs",
     "lint": "ng lint",
-    "prepare": "pnpx husky"
+    "prepare": "husky",
+    "prettier": "pnpm exec prettier . --write"
   },
   "private": true,
   "dependencies": {

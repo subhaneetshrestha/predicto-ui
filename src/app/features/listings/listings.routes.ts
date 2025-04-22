@@ -1,7 +1,3 @@
-import type { Routes } from "@angular/router";
+import type { Routes } from '@angular/router';
 
-export const LISTING_ROUTES: Routes = [
-  {
-
-  }
-]
+export const LISTING_ROUTES: Routes = [{}];

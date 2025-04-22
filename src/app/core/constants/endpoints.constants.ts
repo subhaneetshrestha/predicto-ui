@@ -1,5 +1,5 @@
-import { inject } from "@angular/core"
-import { type Environment, ENVIRONMENT } from "@core/tokens/environment.token"
+import { inject } from '@angular/core';
+import { type Environment, ENVIRONMENT } from '@core/tokens/environment.token';
 
 export const getEndpoints = () => {
   const environment = inject<Environment>(ENVIRONMENT);
@@ -17,13 +17,11 @@ export const getEndpoints = () => {
       v1: {
         user: `${environment.apiBaseUrl}/v1/user`,
         overall: `${environment.apiBaseUrl}/v1/user/overall`,
-      }
+      },
     },
 
     multiplayer: {
-      v1: {
-        
-      }
-    }
-  }
-}
+      v1: {},
+    },
+  };
+};
