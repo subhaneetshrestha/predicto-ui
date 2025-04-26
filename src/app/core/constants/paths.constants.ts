@@ -1,7 +1,16 @@
 export const ROOT_PATHS = {
-  home: '',
-  listings: 'listings',
+  root: '',
+  events: 'events',
   error404: 'not-found',
+};
+
+export const HOME_PATHS = {
+  home: '',
+};
+
+export const EVENT_PATHS = {
+  event: 'events',
+  eventDetail: ':event',
 };
 
 export const AUTHENTICATION_PATHS = {

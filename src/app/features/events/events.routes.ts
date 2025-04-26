@@ -1,3 +1,3 @@
 import type { Routes } from '@angular/router';
 
-export const LISTING_ROUTES: Routes = [{}];
+export const EVENT_ROUTES: Routes = [];

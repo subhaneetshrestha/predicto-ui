@@ -63,4 +63,5 @@ if (isMainModule(import.meta.url)) {
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
-export const requestHandler = createNodeRequestHandler(app);
+// eslint-disable-next-line unicorn/prevent-abbreviations
+export const reqHandler = createNodeRequestHandler(app);
